@@ -1,0 +1,44 @@
+# ===================== 构建产物 =====================
+# M7/M4 全部构建输出（*.o *.d *.elf *.bin *.hex *.map *.lst 等）
+# 注意：不要用全局 *.bin —— firmware/openocd/flash_op/*.bin 是烧录算法，必须纳入版本管理
+firmware/Makefile/build/
+
+# ===================== 自动生成的模型数组 =====================
+# firmware/USER/src/person_model_data.cc 由 tools/embed_tflite.py 依据
+# models/person_detect.tflite 生成，但刻意提交、不在此忽略：
+# Makefile 在解析期用 wildcard 收集 ../USER/src/*.cc，干净检出时若缺少该文件，
+# 它不会进入目标列表，导致开箱 `make` 缺模型符号。更换模型后由 Makefile 自动重建，请勿手改。
+
+# ===================== Python =====================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# ===================== 上位机抓拍产物 =====================
+# capture_ov5640.py 默认在运行目录保存的原始帧与预览图
+ov5640_*.jpg
+ov5640_*.y8
+ov5640_*.rgb565
+ov5640_*.preview.png
+
+# ===================== IDE / 编辑器 =====================
+.vscode/
+.idea/
+.settings/
+*.bak
+*~
+*.swp
+*.swo
+
+# Keil / N32Studio 调试器本地状态
+*.uvguix.*
+*.uvoptx.*
+
+# ===================== 操作系统 =====================
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,67 @@
+N32H787 Person Presence Detection Demo
+Copyright (c) 2024-2025, Nations Technologies Inc. (国民技术股份有限公司)
+
+This product is licensed under the Apache License, Version 2.0 (the "License");
+you may not use this product except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+================================================================================
+Third-party components
+================================================================================
+
+This product bundles or derives from the following third-party components.
+Your use of these components is also under the terms of their respective
+licenses, reproduced inside the source trees listed below:
+
+  1. ARM CMSIS (Cortex-M CMSIS-CORE headers and device files)
+     Copyright (c) Arm Limited (or its affiliates). All rights reserved.
+     License: Apache-2.0
+     Location: firmware/Driver/CMSIS/core/
+
+  2. TensorFlow Lite Micro (headers and the prebuilt library
+     libtensorflow-microlite.a), including the person_detect.tflite model
+     taken from the TensorFlow Lite Micro person_detection example
+     Copyright The TensorFlow Authors. All rights reserved.
+     License: Apache-2.0
+     Location: firmware/USER/tflm_sdk/ (LICENSE), models/
+
+  3. CMSIS-NN and CMSIS headers bundled with TensorFlow Lite Micro
+     Copyright (c) Arm Limited (or its affiliates). All rights reserved.
+     License: Apache-2.0
+     Location: firmware/USER/tflm_sdk/third_party/cmsis/,
+               firmware/USER/tflm_sdk/third_party/cmsis_nn/
+
+  4. FlatBuffers
+     Copyright Google Inc. All rights reserved.
+     License: Apache-2.0
+     Location: firmware/USER/tflm_sdk/third_party/flatbuffers/
+
+  5. gemmlowp / ruy
+     Copyright The Gemmlowp Authors / Google LLC. All rights reserved.
+     License: Apache-2.0
+     Location: firmware/USER/tflm_sdk/third_party/gemmlowp/,
+               firmware/USER/tflm_sdk/third_party/ruy/
+
+  6. KissFFT
+     Copyright (c) 2003-2010 Mark Borgerding
+     License: BSD-3-Clause
+     Location: firmware/USER/tflm_sdk/third_party/kissfft/ (COPYING)
+
+  7. Zephyr Project RTOS (register initialisation sequence of the OV5640
+     DVP driver adapted in firmware/USER/inc/ov5640_dvp_gray8.h)
+     Copyright The Zephyr Project Contributors.
+     License: Apache-2.0
+
+Trademarks:
+"Nations", "Nationstech", "N32", "N32H787" and the Nations logo are
+trademarks of Nations Technologies Inc. This project does not grant any
+right to use company or product trademarks beyond what is required for
+reasonable and customary use in describing the origin of the work.
