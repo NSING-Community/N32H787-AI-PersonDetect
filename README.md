@@ -2,6 +2,14 @@
 
 基于 N32H787 双核 MCU 与 OV5640 摄像头、在端侧运行 TensorFlow Lite Micro int8 模型，实时判断画面中**是否有人**并通过串口与指示灯输出结果的裁剪模板工程。
 
+## 在线烧录
+
+无需安装工具链，使用 Chrome/Edge 打开以下链接，通过 NSLink 调试器将固件直接烧录到 N32H787：
+
+**[在线烧录 N32H787 人体存在检测 DEMO](https://update.nationstech.com/ns-flash/?target=n32h787&firmware=https%3A%2F%2Fraw.githubusercontent.com%2FNsing-Community%2FN32H787-AI-PersonDetect%2Fmain%2Fbin%2Fn32h787_person_detect_demo.bin)**
+
+> 烧录前请通过 **DEBUG USB（J9）** 连接 NSLink，并确认 OV5640 已插入 **DVP2** 座。
+
 ## 简介
 
 本工程是一个"是否有人"的二分类检测模板：一核持续采集摄像头画面并响应上位机取流，另一核在后台异步执行神经网络推理，两核通过共享内存交换帧和检测结果，互不阻塞。输出为 person / no-person 两类置信度，不做人脸框定位或身份识别，适合作为门禁唤醒、存在感应、人脸闸机等应用的起点。
