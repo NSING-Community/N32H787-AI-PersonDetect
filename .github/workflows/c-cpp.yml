@@ -1,0 +1,69 @@
+name: Build N32H787 PersonDetect
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Firmware
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ARM GCC
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi make python3
+
+      - name: Show toolchain version
+        run: |
+          arm-none-eabi-gcc --version
+          arm-none-eabi-g++ --version
+          make --version
+          python3 --version
+
+      - name: Build firmware
+        working-directory: firmware/Makefile
+        run: |
+          make -j$(nproc)
+
+      - name: Show firmware size
+        working-directory: firmware/Makefile
+        run: |
+          arm-none-eabi-size build/n32h787_person_detect_demo.elf
+          ls -lh build/n32h787_person_detect_demo.*
+
+      # 每次编译都保存 Artifact
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: n32h787-person-detect-${{ github.sha }}
+          path: |
+            firmware/Makefile/build/n32h787_person_detect_demo.bin
+            firmware/Makefile/build/n32h787_person_detect_demo.hex
+            firmware/Makefile/build/n32h787_person_detect_demo.elf
+            firmware/Makefile/build/n32h787_person_detect_demo.map
+          if-no-files-found: error
+
+      # 只有打 v* Tag 时才创建 GitHub Release
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            firmware/Makefile/build/n32h787_person_detect_demo.bin
+            firmware/Makefile/build/n32h787_person_detect_demo.hex
