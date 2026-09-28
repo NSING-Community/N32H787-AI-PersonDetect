@@ -8,7 +8,7 @@
 
 无需安装工具链，使用 Chrome/Edge 打开以下链接，通过 NSLink 调试器将固件直接烧录到 N32H787：
 
-**[在线烧录 N32H787 人体存在检测 DEMO](https://update.nationstech.com/ns-flash/?target=n32h787&firmware=https%3A%2F%2Fraw.githubusercontent.com%2FNsing-Community%2FN32H787-AI-PersonDetect%2Fmain%2Fbin%2Fn32h787_person_detect_demo.bin)**
+**[在线烧录 N32H787 人体存在检测 DEMO](https://update.nationstech.com/ns-flash/?target=n32h787&firmware=https%3A%2F%2Fraw.githubusercontent.com%2FNSING-Community%2FN32H787-AI-PersonDetect%2Fmain%2Fbin%2Fn32h787_person_detect_demo.bin)**
 
 > 烧录前请通过 **DEBUG USB（J9）** 连接 NSLink，并确认 OV5640 已插入 **DVP2** 座。
 

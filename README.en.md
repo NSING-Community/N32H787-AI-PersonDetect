@@ -8,7 +8,7 @@ A trimmed-down template project that runs a TensorFlow Lite Micro int8 model on-
 
 No toolchain installation required. Open the link below in Chrome/Edge to flash the firmware straight to the N32H787 through an NSLink debugger:
 
-**[Flash N32H787 AI Person Detection DEMO in your browser](https://update.nationstech.com/ns-flash/?target=n32h787&firmware=https%3A%2F%2Fraw.githubusercontent.com%2FNsing-Community%2FN32H787-AI-PersonDetect%2Fmain%2Fbin%2Fn32h787_person_detect_demo.bin&lang=en)**
+**[Flash N32H787 AI Person Detection DEMO in your browser](https://update.nationstech.com/ns-flash/?target=n32h787&firmware=https%3A%2F%2Fraw.githubusercontent.com%2FNSING-Community%2FN32H787-AI-PersonDetect%2Fmain%2Fbin%2Fn32h787_person_detect_demo.bin&lang=en)**
 
 > Before flashing, connect the NSLink via **DEBUG USB (J9)** and make sure the OV5640 module is seated in the **DVP2** socket.
 
@@ -32,7 +32,7 @@ This project is a binary "person / no-person" detection template: one core conti
 ## Hardware Platform
 
 - **MCU**: N32H787 (Cortex-M7 @ 600 MHz + Cortex-M4 dual core, with FPU)
-- **Board**: Nsing Technologies official development board **N32H787\_HMI\_V1.1**
+- **Board**: NSING Technologies official development board **N32H787\_HMI\_V1.1**
 - **Camera**: OV5640 (DVP parallel interface, outputs QVGA 320×240 Y8 grayscale)
 - **Peripherals**: USB (NSLink virtual COM port, USART1 921600 8N1), on-chip Flash/SRAM, external 32 MB SDRAM, on-chip hardware JPEG encoder, GPIO indicator LEDs (PB3 lights at low level to indicate "person present"; PI8 is the run heartbeat LED)
 
