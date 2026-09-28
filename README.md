@@ -193,8 +193,3 @@ python tools\capture_ov5640.py --list-ports    :: 查看可用串口
 
 本工程以 **BSD 3-Clause License** 发布，完整许可文本见 [LICENSE](LICENSE)。
 
-**适用范围**：上述 BSD-3-Clause 声明仅适用于 NSING 拥有完整版权，或依法取得相应授权且有权按 BSD-3-Clause 发布的代码。工程中包含第三方代码的部分，其原有版权声明与许可证继续适用，**不适用** NSING 的版权与 BSD-3-Clause 声明，其使用、修改和发布均须遵循各自许可证的要求。
-
-- 第三方组件（CMSIS、TensorFlow Lite Micro、CMSIS-NN、FlatBuffers、gemmlowp、ruy、KissFFT、Zephyr 衍生代码及检测模型）的归属与许可见 [NOTICE](NOTICE)，各自许可文本随附在源码目录中（如 `firmware/USER/tflm_sdk/` 下的 LICENSE、KissFFT 的 COPYING），再分发时请一并保留。
-- **商标声明**：Nations、Nationstech、N32、N32H787 及国民技术标识为国民技术股份有限公司商标，BSD-3-Clause 许可不包含商标授权。
-
