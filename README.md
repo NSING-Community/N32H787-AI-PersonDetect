@@ -1,3 +1,5 @@
+**简体中文** | [English](README.en.md)
+
 # N32H787 人体存在检测 DEMO
 
 基于 N32H787 双核 MCU 与 OV5640 摄像头、在端侧运行 TensorFlow Lite Micro int8 模型，实时判断画面中**是否有人**并通过串口与指示灯输出结果的裁剪模板工程。
@@ -9,6 +11,19 @@
 **[在线烧录 N32H787 人体存在检测 DEMO](https://update.nationstech.com/ns-flash/?target=n32h787&firmware=https%3A%2F%2Fraw.githubusercontent.com%2FNsing-Community%2FN32H787-AI-PersonDetect%2Fmain%2Fbin%2Fn32h787_person_detect_demo.bin)**
 
 > 烧录前请通过 **DEBUG USB（J9）** 连接 NSLink，并确认 OV5640 已插入 **DVP2** 座。
+
+**烧录步骤**
+
+1. 点击**接入 ns-link**，在左上角的弹框中点击设备，再点击**连接**——连接成功后会自动识别**芯片型号**（N32H787）与 **Flash 容量**（2 MB）。
+2. 选择**固件来源**（二选一）：**固件 URL** 为已编好的固件，链接已随页面填好，直接使用即可；**本地文件**则用于烧录自己编译的固件，点击**选择文件**载入 `.bin`。
+3. 选择**校验方式**，默认即可。
+4. 点击**开始烧录**，等待进度条走完，下方日志出现"成功"即烧录完成。
+
+![ns-flash 在线烧录工具：连接 NSLink、选择固件来源与校验方式、开始烧录](docs/images/ns_flash_online.png)
+
+5. 烧录完成后点击左侧**摄像头预览**，在 **OV5640 实时预览**面板中点击**连接串口**（波特率选 921600）并勾选**开启人员检测**，即可在浏览器里直接查看摄像头实时画面与识别结果——底部状态栏给出分辨率、帧率、JPEG 大小、丢帧数，以及检测结论（如"有人 73%"）与推理耗时。
+
+![ns-flash 摄像头预览：在浏览器中查看 OV5640 实时画面与人物检测结果](docs/images/ns_flash_camera_preview.png)
 
 ## 简介
 
@@ -176,8 +191,10 @@ python tools\capture_ov5640.py --list-ports    :: 查看可用串口
 
 ## 开源许可
 
-本工程由国民技术股份有限公司（Nations Technologies Inc.）以 **Apache License 2.0** 发布，完整许可文本见 [LICENSE](LICENSE)。每个源文件头均带有 `SPDX-License-Identifier: Apache-2.0` 声明。
+本工程以 **BSD 3-Clause License** 发布，完整许可文本见 [LICENSE](LICENSE)。
 
-- 第三方组件（CMSIS、TensorFlow Lite Micro、CMSIS-NN、FlatBuffers、gemmlowp、ruy、KissFFT、Zephyr 衍生代码及检测模型）的归属见 [NOTICE](NOTICE)，各自许可文本随附在源码目录中（如 `firmware/USER/tflm_sdk/` 下的 LICENSE、KissFFT 的 COPYING），再分发时请一并保留。
-- **商标声明**：Nations、Nationstech、N32、N32H787 及国民技术标识为国民技术股份有限公司商标，Apache-2.0 许可不包含商标授权。
+**适用范围**：上述 BSD-3-Clause 声明仅适用于 NSING 拥有完整版权，或依法取得相应授权且有权按 BSD-3-Clause 发布的代码。工程中包含第三方代码的部分，其原有版权声明与许可证继续适用，**不适用** NSING 的版权与 BSD-3-Clause 声明，其使用、修改和发布均须遵循各自许可证的要求。
+
+- 第三方组件（CMSIS、TensorFlow Lite Micro、CMSIS-NN、FlatBuffers、gemmlowp、ruy、KissFFT、Zephyr 衍生代码及检测模型）的归属与许可见 [NOTICE](NOTICE)，各自许可文本随附在源码目录中（如 `firmware/USER/tflm_sdk/` 下的 LICENSE、KissFFT 的 COPYING），再分发时请一并保留。
+- **商标声明**：Nations、Nationstech、N32、N32H787 及国民技术标识为国民技术股份有限公司商标，BSD-3-Clause 许可不包含商标授权。
 
