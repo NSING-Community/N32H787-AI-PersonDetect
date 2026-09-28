@@ -192,8 +192,3 @@ Firmware UART commands: `C` grabs one frame, `N` toggles person detection, `J` t
 ## License
 
 This project is released under the **BSD 3-Clause License**; the full license text is in [LICENSE](LICENSE).
-
-**Scope**: that BSD-3-Clause declaration applies only to code for which NSING holds the complete copyright, or has obtained the necessary authorisation and the right to publish under BSD-3-Clause. Where this project contains third-party code, its original copyright notice and license continue to apply — the NSING copyright and the BSD-3-Clause declaration do **not** cover it, and its use, modification and distribution remain governed by its own license.
-
-- Attribution and licensing for third-party components (CMSIS, TensorFlow Lite Micro, CMSIS-NN, FlatBuffers, gemmlowp, ruy, KissFFT, Zephyr-derived code and the detection model) is in [NOTICE](NOTICE); their respective license texts ship alongside the source (e.g. the LICENSE under `firmware/USER/tflm_sdk/`, and KissFFT's COPYING). Please keep them when redistributing.
-- **Trademark notice**: Nations, Nationstech, N32, N32H787 and the Nations Technologies logo are trademarks of Nsing Technologies Inc. The BSD-3-Clause license does not grant trademark rights.
